@@ -5,37 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Welcome - Khalid Noor</title>
   <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: Arial, sans-serif;
       background: url('aesthetic-smoke-dark-desktop-wallpaper.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
       padding: 50px;
-      margin: 0;
     }
+
+    .container {
+      max-width: 800px;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
     h1 {
       font-size: 3em;
       margin-bottom: 20px;
       text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
     }
+
     p {
       font-size: 1.2em;
-      max-width: 800px;
-      margin: auto;
-      background-color: rgba(0, 0, 0, 0.4); /* subtle dark overlay for readability */
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      line-height: 1.6;
     }
   </style>
 </head>
 <body>
-  <div>
+  <div class="container">
     <h1>Hi, this is Khalid Noor, Welcome</h1>
     <p>
-      Ut posuere semper ante, sit amet vestibulum dolor convallis ac. Duis mollis nisl eu magna lobortis, non interdum ex euismod. Nunc consequat erat a ante rhoncus, nec convallis felis posuere. Nam nec urna non turpis fermentum semper at eu ligula. <br />
- Mauris iaculis libero non eros volutpat, nec mattis felis ultricies. Proin tincidunt enim felis, ac scelerisque tortor tempus eget. Duis vehicula interdum ipsum id egestas. Nulla facilisi.
+      Ut posuere semper ante, sit amet vestibulum dolor convallis ac. Duis mollis nisl eu magna lobortis, non interdum ex euismod. Nunc consequat erat a ante rhoncus, nec convallis felis posuere. Nam nec urna non turpis fermentum semper at eu ligula. Mauris iaculis libero non eros volutpat, nec mattis felis ultricies. Proin tincidunt enim felis, ac scelerisque tortor tempus eget. Duis vehicula interdum ipsum id egestas. Nulla facilisi.
     </p>
   </div>
 </body>
