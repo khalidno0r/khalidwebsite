@@ -4,43 +4,51 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Welcome - Khalid Noor</title>
-  <!-- Font Awesome for LinkedIn Icon -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
   <style>
     html, body {
       height: 100%;
       margin: 0;
       padding: 0;
+      overflow-x: hidden; /* Prevents horizontal scroll */
+      background: url('aesthetic-smoke-dark-desktop-wallpaper.jpg') no-repeat center center fixed;
+      background-size: cover;
     }
 
     body {
       font-family: Arial, sans-serif;
-      background: url('aesthetic-smoke-dark-desktop-wallpaper.jpg') no-repeat center center fixed;
-      background-size: cover;
       color: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 50px;
-      position: relative;
+      box-sizing: border-box;
     }
 
-    /* LinkedIn Icon Style */
+    /* LinkedIn icon */
     .linkedin-icon {
-      position: absolute;
+      position: fixed;
       top: 20px;
       right: 20px;
-      font-size: 2em;
-      color: #cccccc; /* Whitish gray */
-      text-decoration: none;
-      transition: transform 0.2s ease, color 0.2s ease;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      transition: background-color 0.3s ease;
+      z-index: 1000;
     }
 
     .linkedin-icon:hover {
-      transform: scale(1.1);
-      color: #ffffff; /* White on hover */
+      background-color: rgba(255, 255, 255, 1);
+    }
+
+    .linkedin-icon img {
+      width: 20px;
+      height: 20px;
     }
 
     .container {
@@ -64,9 +72,9 @@
   </style>
 </head>
 <body>
-  <!-- LinkedIn Icon Link -->
+  <!-- LinkedIn Icon -->
   <a href="https://www.linkedin.com/in/khalidnoor526/" target="_blank" class="linkedin-icon">
-    <i class="fab fa-linkedin"></i>
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
   </a>
 
   <div class="container">
