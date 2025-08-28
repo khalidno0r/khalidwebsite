@@ -30,7 +30,7 @@
       position: relative;
     }
 
-    /* Top-right icons container */
+    
     .top-icons {
       position: absolute;
       top: 20px;
@@ -75,7 +75,20 @@
       filter: grayscale(0) brightness(1.2);
     }
 
-    /* Container */
+    .brand-icon {
+      font-size: 1.8rem;
+      transition: all 0.3s ease;
+    }
+
+    .linkedin { color: #0a66c2; }
+    .comptia { color: #e93f33; }
+    .aws { color: #ff9900; }
+
+    .top-icons a:hover .brand-icon {
+      transform: scale(1.1);
+    }
+
+    
     .container {
       max-width: 800px;
       background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(30, 30, 30, 0.7));
@@ -135,11 +148,12 @@
       background: transparent;
       border-radius: 10px;
       text-align: center;
-      max-width: 90%;
-      max-height: 90%;
+      max-width: 100%;
+      max-height: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
+      width: 100%;
     }
 
     .modal-content img {
@@ -147,12 +161,13 @@
       max-height: 75vh;
       border-radius: 8px;
       box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+      object-fit: contain;
     }
 
     .close {
       position: absolute;
-      top: -40px;
-      right: -30px;
+      top: 15px;
+      right: 15px;
       font-size: 2.5em;
       color: #fff;
       cursor: pointer;
@@ -196,11 +211,11 @@
     }
 
     .nav-left {
-      left: -70px;
+      left: 15px;
     }
 
     .nav-right {
-      right: -70px;
+      right: 15px;
     }
 
     .cert-title {
@@ -208,6 +223,7 @@
       font-size: 1.4em;
       color: #f0f0f0;
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      padding: 0 10px;
     }
 
     /* Particle background effect */
@@ -226,7 +242,7 @@
       border-radius: 50%;
     }
 
-    /* Mobile Optimization */
+    
     @media (max-width: 768px) {
       body {
         padding: 20px;
@@ -255,9 +271,13 @@
         height: 38px;
       }
       
+      .brand-icon {
+        font-size: 1.6rem;
+      }
+      
       .close {
-        top: -30px;
-        right: -10px;
+        top: 10px;
+        right: 10px;
         font-size: 2em;
         width: 40px;
         height: 40px;
@@ -270,15 +290,23 @@
       }
       
       .nav-left {
-        left: -40px;
+        left: 10px;
       }
       
       .nav-right {
-        right: -40px;
+        right: 10px;
       }
       
       .cert-title {
         font-size: 1.2em;
+      }
+      
+      .modal-content {
+        padding: 0 10px;
+      }
+      
+      .modal-content img {
+        max-height: 65vh;
       }
     }
 
@@ -293,52 +321,67 @@
         height: 45px;
       }
       
-      .nav-left {
-        left: -30px;
+      .cert-title {
+        font-size: 1.1em;
       }
       
-      .nav-right {
-        right: -30px;
+      .modal-content img {
+        max-height: 60vh;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .modal-content img {
+        max-height: 55vh;
+      }
+      
+      .nav-arrow {
+        width: 40px;
+        height: 40px;
       }
     }
   </style>
 </head>
 <body>
   
-  <!-- Animated background particles -->
+  
   <div class="particles" id="particles"></div>
   
-  <!-- Top Right Icons -->
+  
   <div class="top-icons">
-    <!-- LinkedIn -->
+    
     <a href="https://www.linkedin.com/in/khalidnoor526/" target="_blank" title="LinkedIn">
-      <i class="fab fa-linkedin" style="font-size: 1.8rem; color: #0a66c2;"></i>
+      <i class="fab fa-linkedin brand-icon linkedin"></i>
     </a>
 
-    <!-- Certs with actual logos -->
+    
     <a href="#" onclick="openModal('ccna', 0)" title="Cisco Certified Network Associate">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/800px-Cisco_logo_blue_2016.svg.png" alt="Cisco" class="logo-img">
     </a>
+    
+    
     <a href="#" onclick="openModal('comptia', 0)" title="CompTIA Certifications">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/CompTIA_logo.png" alt="CompTIA" class="logo-img">
+      <i class="fas fa-certificate brand-icon comptia"></i>
     </a>
+    
+    
     <a href="#" onclick="openModal('aws', 0)" title="Amazon Web Services Certifications">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1280px-Amazon_Web_Services_Logo.svg.png" alt="AWS" class="logo-img">
+      <i class="fab fa-aws brand-icon aws"></i>
     </a>
   </div>
 
-  <!-- Main Container -->
+  
   <div class="container">
     <h1>Hi, I'm Khalid Noorulbaqi</h1>
     <p>
-      Welcome to my professional portfolio. I am a dedicated <span class="highlight">IT professional</span> with expertise in network administration, cloud computing, and cybersecurity. I hold certifications from <span class="highlight">Cisco, CompTIA, and AWS</span> that validate my skills in these domains.
+      Ut posuere semper ante, sit amet vestibulum dolor convallis ac. Duis mollis nisl eu magna lobortis, non interdum ex euismod. Nunc consequat erat a ante rhoncus, nec convallis felis posuere. Nam nec urna non turpis fermentum semper at eu ligula. 
     </p>
     <p>
-      With a passion for technology and problem-solving, I strive to create efficient and secure systems that meet business objectives. Feel free to explore my certifications and connect with me on LinkedIn.
+      Mauris iaculis libero non eros volutpat, nec mattis felis ultricies. Proin tincidunt enim felis, ac scelerisque tortor tempus eget. Duis vehicula interdum ipsum id egestas. Nulla facilisi.
     </p>
   </div>
 
-  <!-- Modal -->
+  
   <div id="certModal" class="modal">
     <span class="close" onclick="closeModal()">&times;</span>
     <div class="modal-content">
@@ -354,7 +397,7 @@
   </div>
 
   <script>
-    // Certificates data - using placeholder images for demonstration
+    
     const certificates = {
       ccna: {
         images: ["ccna-cert.png"],
@@ -389,7 +432,7 @@
       modal.style.display = "flex";
       setTimeout(() => modal.classList.add("show"), 10);
 
-      // Show/hide arrows based on number of images
+      
       const arrows = document.querySelectorAll('.nav-arrow');
       if (certificates[category].images.length > 1) {
         arrows.forEach(arrow => arrow.style.display = 'flex');
@@ -418,7 +461,7 @@
       document.getElementById("certTitle").textContent = certificates[currentCategory].titles[currentIndex];
     }
 
-    // Close modal when clicking outside the content
+    
     window.onclick = function(event) {
       const modal = document.getElementById('certModal');
       if (event.target == modal) {
@@ -426,14 +469,14 @@
       }
     }
 
-    // Close modal with Escape key
+    
     document.addEventListener('keydown', function(event) {
       if (event.key === "Escape") {
         closeModal();
       }
     });
 
-    // Create animated particles in background
+    
     function createParticles() {
       const particlesContainer = document.getElementById('particles');
       const particleCount = 50;
@@ -457,7 +500,7 @@
         particlesContainer.appendChild(particle);
       }
       
-      // Add the animation keyframes
+      
       const style = document.createElement('style');
       style.textContent = `
         @keyframes float {
@@ -482,7 +525,7 @@
       document.head.appendChild(style);
     }
 
-    // Initialize particles when page loads
+    
     window.addEventListener('load', createParticles);
   </script>
 </body>
