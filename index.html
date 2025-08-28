@@ -14,6 +14,7 @@
       margin: 0;
       padding: 0;
       scroll-behavior: smooth;
+      overflow-x: hidden; /* Prevent horizontal scrolling */
     }
 
     body {
@@ -122,7 +123,7 @@
       font-weight: 500;
     }
 
-    /* Modal */
+    /* Modal - Fixed positioning */
     .modal {
       display: none;
       position: fixed;
@@ -134,9 +135,10 @@
       background-color: rgba(0, 0, 0, 0.95);
       align-items: center;
       justify-content: center;
-      padding: 20px;
       opacity: 0;
       transition: opacity 0.3s ease;
+      padding: 0;
+      overflow: auto;
     }
 
     .modal.show {
@@ -148,26 +150,29 @@
       background: transparent;
       border-radius: 10px;
       text-align: center;
-      max-width: 100%;
-      max-height: 100%;
+      max-width: 90%;
+      max-height: 90vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 100%;
+      justify-content: center;
+      margin: auto;
+      padding: 40px 20px 20px;
+      box-sizing: border-box;
     }
 
     .modal-content img {
       max-width: 100%;
-      max-height: 75vh;
+      max-height: 70vh;
       border-radius: 8px;
       box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
       object-fit: contain;
     }
 
     .close {
-      position: absolute;
-      top: 15px;
-      right: 15px;
+      position: fixed;
+      top: 20px;
+      right: 20px;
       font-size: 2.5em;
       color: #fff;
       cursor: pointer;
@@ -224,6 +229,8 @@
       color: #f0f0f0;
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
       padding: 0 10px;
+      text-align: center;
+      width: 100%;
     }
 
     /* Particle background effect */
@@ -276,8 +283,8 @@
       }
       
       .close {
-        top: 10px;
-        right: 10px;
+        top: 15px;
+        right: 15px;
         font-size: 2em;
         width: 40px;
         height: 40px;
@@ -302,11 +309,12 @@
       }
       
       .modal-content {
-        padding: 0 10px;
+        padding: 40px 10px 15px;
+        max-width: 95%;
       }
       
       .modal-content img {
-        max-height: 65vh;
+        max-height: 60vh;
       }
     }
 
@@ -326,18 +334,30 @@
       }
       
       .modal-content img {
-        max-height: 60vh;
+        max-height: 55vh;
+      }
+      
+      .close {
+        top: 10px;
+        right: 10px;
       }
     }
 
     @media (max-width: 360px) {
       .modal-content img {
-        max-height: 55vh;
+        max-height: 50vh;
       }
       
       .nav-arrow {
         width: 40px;
         height: 40px;
+        font-size: 1.5em;
+      }
+      
+      .close {
+        width: 35px;
+        height: 35px;
+        font-size: 1.7em;
       }
     }
   </style>
@@ -432,7 +452,10 @@
       modal.style.display = "flex";
       setTimeout(() => modal.classList.add("show"), 10);
 
+      // Prevent background scrolling when modal is open
+      document.body.style.overflow = 'hidden';
       
+      // Show/hide arrows based on number of images
       const arrows = document.querySelectorAll('.nav-arrow');
       if (certificates[category].images.length > 1) {
         arrows.forEach(arrow => arrow.style.display = 'flex');
@@ -444,7 +467,11 @@
     function closeModal() {
       const modal = document.getElementById("certModal");
       modal.classList.remove("show");
-      setTimeout(() => modal.style.display = "none", 300);
+      setTimeout(() => {
+        modal.style.display = "none";
+        // Re-enable background scrolling
+        document.body.style.overflow = 'auto';
+      }, 300);
     }
 
     function nextImage() {
